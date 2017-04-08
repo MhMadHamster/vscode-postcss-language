@@ -1,0 +1,29 @@
+{
+    "name": "postcss-language",
+    "displayName": "postcss-language",
+    "description": "postcss syntax support extension for VSCode",
+    "version": "1.0.0",
+    "publisher": "mhmadhamster",
+    "repository": {
+        "git": "https://github.com/MhMadHamster/vscode-postcss-language"
+    },
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "postcss",
+            "aliases": ["PostCSS", "postcss"],
+            "extensions": [".css", ".pcss", ".postcss"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "postcss",
+            "scopeName": "scope.css.postcss",
+            "path": "./syntaxes/postcss.tmLanguage.json"
+        }]
+    }
+}
