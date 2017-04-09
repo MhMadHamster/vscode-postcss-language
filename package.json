@@ -1,7 +1,7 @@
 {
     "name": "postcss-language",
-    "displayName": "postcss-language",
-    "description": "postcss syntax support extension for VSCode",
+    "displayName": "postcss-sugarss-language",
+    "description": "postcss and sugarss syntax support extension for VSCode",
     "version": "1.0.3",
     "publisher": "mhmadhamster",
     "repository": {
@@ -10,10 +10,11 @@
     },
     "keywords": [
         "postcss",
-        "language",
+        "sugarss",
+        "cssnext",
         "syntax",
         "grammar",
-        "cssnext",
+        "language",        
         "vscode"
     ],
     "engines": {
@@ -36,13 +37,29 @@
                     ".postcss"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "sugarss",
+                "aliases": [
+                    "SugarSS",
+                    "sugarss"
+                ],
+                "extensions": [
+                    ".sss"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "postcss",
-                "scopeName": "scope.css.postcss",
-                "path": "./syntaxes/postcss.tmLanguage.json"
+                "scopeName": "source.css.postcss",
+                "path": "./syntaxes/postcss.tmLanguage"
+            },
+            {
+                "language": "sugarss",
+                "scopeName": "source.css.postcss.sugarss",
+                "path": "./syntaxes/sugarss.tmLanguage"
             }
         ]
     },

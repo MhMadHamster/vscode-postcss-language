@@ -1,12 +1,17 @@
 # postcss-language
 
-VSCode language support for PostCSS
+VSCode language support for PostCSS and SugarSS
 
-grammar based on [atom-language-postcss](https://github.com/azat-io/atom-language-postcss)
+package is based on [Syntax Highlighting for PostCSS](https://github.com/hudochenkov/Syntax-highlighting-for-PostCSS)
 
 ## Features
 
 Syntax highlighting for:  
 ``.css``  
 ``.pcss``  
-``.postcss``
+``.postcss``  
+```.sss```
+
+## Known Issues
+
+semicolon automatically added when expanding abbreviation in *.sss files
