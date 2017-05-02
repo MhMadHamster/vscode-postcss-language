@@ -2,7 +2,7 @@
     "name": "postcss-language",
     "displayName": "postcss-sugarss-language",
     "description": "postcss and sugarss syntax support extension for VSCode",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "publisher": "mhmadhamster",
     "repository": {
         "type": "git",
@@ -32,7 +32,6 @@
                     "postcss"
                 ],
                 "extensions": [
-                    ".css",
                     ".pcss",
                     ".postcss"
                 ],
