@@ -55,25 +55,17 @@ export function activate(context: ExtensionContext) {
       return client.sendRequest(ColorSymbolRequest.type, uri).then(ranges => ranges.map(client.protocol2CodeConverter.asRange));
     };
     let isDecoratorEnabled = (languageId: string) => {
-      return workspace.getConfiguration().get<boolean>(languageId + '.colorDecorators.enable');
+      return workspace.getConfiguration().get<boolean>(languageId + '.colorDecorators.enable') || true;
     };
     disposable = activateColorDecorations(colorRequestor, { postcss: true }, isDecoratorEnabled);
     context.subscriptions.push(disposable);
   });
 
-  languages.setLanguageConfiguration('css', {
+  languages.setLanguageConfiguration('postcss', {
     wordPattern: /(#?-?\d*\.\d\w*%?)|(::?[\w-]*(?=[^,{;]*[,{]))|(([@#.!])?[\w-?]+%?|[@#!.])/g
   });
 
-  languages.setLanguageConfiguration('less', {
-    wordPattern: /(#?-?\d*\.\d\w*%?)|(::?[\w-]+(?=[^,{;]*[,{]))|(([@#.!])?[\w-?]+%?|[@#!.])/g
-  });
-
-  languages.setLanguageConfiguration('scss', {
-    wordPattern: /(#?-?\d*\.\d\w*%?)|(::?[\w-]*(?=[^,{;]*[,{]))|(([@$#.!])?[\w-?]+%?|[@#!$.])/g
-  });
-
-  commands.registerCommand('_css.applyCodeAction', applyCodeAction);
+  commands.registerCommand('_postcss.applyCodeAction', applyCodeAction);
 
   function applyCodeAction(uri: string, documentVersion: number, edits: TextEdit[]) {
     let textEditor = window.activeTextEditor;

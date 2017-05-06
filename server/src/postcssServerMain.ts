@@ -9,7 +9,7 @@ import {
   TextDocuments, TextDocument, InitializeParams, InitializeResult, RequestType
 } from 'vscode-languageserver';
 
-import { getCSSLanguageService, LanguageSettings, LanguageService, Stylesheet } from 'vscode-css-languageservice';
+import { getSCSSLanguageService, LanguageSettings, LanguageService, Stylesheet } from 'vscode-css-languageservice';
 import { getLanguageModelCache } from './languageModelCache';
 
 namespace ColorSymbolRequest {
@@ -62,7 +62,7 @@ connection.onInitialize((params: InitializeParams): InitializeResult => {
 });
 
 let languageServices: { [id: string]: LanguageService } = {
-  css: getCSSLanguageService(),
+  css: getSCSSLanguageService(),
 };
 
 function getLanguageService(document: TextDocument) {
