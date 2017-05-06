@@ -1,0 +1,16 @@
+{
+  "name": "postcss-language-server",
+  "version": "0.0.1",
+  "author": "mhmad.hamster@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "vscode-css-languageservice": "2.0.3",
+    "vscode-languageserver": "3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "7.0.18"
+  },
+  "scripts": {
+    "compile": ""
+  }
+}
