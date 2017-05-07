@@ -10,7 +10,12 @@
     "url": "https://github.com/MhMadHamster/vscode-postcss-language"
   },
   "scripts": {
-    "pkgvars": "node ./node_modules/vscode/bin/install"
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "compile:server": "tsc -p ./server",
+    "compile:client": "tsc -p ./client",
+    "compile": "npm run compile:server && npm run compile:client",
+    "watch:client": "tsc -p ./client -w",
+    "watch:server": "tsc -p ./server -p"
   },
   "keywords": [
     "postcss",
