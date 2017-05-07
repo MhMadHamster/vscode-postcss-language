@@ -1,108 +1,108 @@
 {
-  "name": "postcss-language",
-  "displayName": "postcss-sugarss-language",
-  "description": "postcss and sugarss syntax support extension for VSCode",
-  "version": "1.0.5",
-  "publisher": "mhmadhamster",
-  "icon": "img/icon.png",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MhMadHamster/vscode-postcss-language"
-  },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "compile:server": "tsc -p ./server",
-    "compile:client": "tsc -p ./client",
-    "compile": "npm run compile:server && npm run compile:client",
-    "watch:client": "tsc -p ./client -w",
-    "watch:server": "tsc -p ./server -p"
-  },
-  "keywords": [
-    "postcss",
-    "sugarss",
-    "cssnext",
-    "syntax",
-    "grammar",
-    "language",
-    "vscode"
-  ],
-  "engines": {
-    "vscode": "^1.10.0"
-  },
-  "categories": [
-    "Languages"
-  ],
-  "activationEvents": [
-    "onLanguage:postcss"
-  ],
-  "main": "./client/out/postcssMain",
-  "contributes": {
-    "languages": [
-      {
-        "id": "postcss",
-        "aliases": [
-          "PostCSS",
-          "postcss"
-        ],
-        "extensions": [
-          ".pcss",
-          ".postcss"
-        ],
-        "configuration": "./language-configuration.json"
-      },
-      {
-        "id": "sugarss",
-        "aliases": [
-          "SugarSS",
-          "sugarss"
-        ],
-        "extensions": [
-          ".sss"
-        ],
-        "configuration": "./language-configuration.json"
-      }
+    "name": "postcss-language",
+    "displayName": "postcss-sugarss-language",
+    "description": "postcss and sugarss syntax support extension for VSCode",
+    "version": "2.0.0",
+    "publisher": "mhmadhamster",
+    "icon": "img/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MhMadHamster/vscode-postcss-language"
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "compile:server": "tsc -p ./server",
+        "compile:client": "tsc -p ./client",
+        "compile": "npm run compile:server && npm run compile:client",
+        "watch:client": "tsc -p ./client -w",
+        "watch:server": "tsc -p ./server -p"
+    },
+    "keywords": [
+        "postcss",
+        "sugarss",
+        "cssnext",
+        "syntax",
+        "grammar",
+        "language",
+        "vscode"
     ],
-    "grammars": [
-      {
-        "language": "postcss",
-        "scopeName": "source.css.postcss",
-        "path": "./syntaxes/postcss.tmLanguage"
-      },
-      {
-        "language": "sugarss",
-        "scopeName": "source.css.postcss.sugarss",
-        "path": "./syntaxes/sugarss.tmLanguage"
-      }
-    ]
-  },
-  "configuration": {
-    "order": 20,
-    "allOf": [
-      {
-        "id": "postcss",
-        "title": "PostCSS",
-        "allOf": [
-          {
-            "title": "Controls PostCSS validation and problem severities.",
-            "properties": {
-              "css.colorDecorators.enable": {
-                "type": "boolean",
-                "default": true,
-                "description": "%postcss.colorDecorators.enable.desc%"
-              }
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:postcss"
+    ],
+    "main": "./client/out/postcssMain",
+    "contributes": {
+        "languages": [
+            {
+                "id": "postcss",
+                "aliases": [
+                    "PostCSS",
+                    "postcss"
+                ],
+                "extensions": [
+                    ".pcss",
+                    ".postcss"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "sugarss",
+                "aliases": [
+                    "SugarSS",
+                    "sugarss"
+                ],
+                "extensions": [
+                    ".sss"
+                ],
+                "configuration": "./language-configuration.json"
             }
-          }
+        ],
+        "grammars": [
+            {
+                "language": "postcss",
+                "scopeName": "source.css.postcss",
+                "path": "./syntaxes/postcss.tmLanguage"
+            },
+            {
+                "language": "sugarss",
+                "scopeName": "source.css.postcss.sugarss",
+                "path": "./syntaxes/sugarss.tmLanguage"
+            }
         ]
-      }
-    ]
-  },
-  "devDependencies": {
-    "@types/node": "7.0.18",
-    "typescript": "2.3.2",
-    "vscode": "1.1.0"
-  },
-  "dependencies": {
-    "vscode-languageclient": "3.2.1",
-    "vscode-nls": "2.0.2"
-  }
+    },
+    "configuration": {
+        "order": 20,
+        "allOf": [
+            {
+                "id": "postcss",
+                "title": "PostCSS",
+                "allOf": [
+                    {
+                        "title": "Controls PostCSS validation and problem severities.",
+                        "properties": {
+                            "css.colorDecorators.enable": {
+                                "type": "boolean",
+                                "default": true,
+                                "description": "%postcss.colorDecorators.enable.desc%"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "7.0.18",
+        "typescript": "2.3.2",
+        "vscode": "1.1.0"
+    },
+    "dependencies": {
+        "vscode-languageclient": "3.2.1",
+        "vscode-nls": "2.0.2"
+    }
 }
