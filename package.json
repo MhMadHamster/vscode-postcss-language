@@ -2,7 +2,7 @@
     "name": "postcss-language",
     "displayName": "postcss-sugarss-language",
     "description": "postcss and sugarss syntax support extension for VSCode",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "publisher": "mhmadhamster",
     "icon": "img/icon.png",
     "repository": {
@@ -15,7 +15,7 @@
         "compile:client": "tsc -p ./client",
         "compile": "npm run compile:server && npm run compile:client",
         "watch:client": "tsc -p ./client -w",
-        "watch:server": "tsc -p ./server -p"
+        "watch:server": "tsc -p ./server -w"
     },
     "keywords": [
         "postcss",
@@ -73,28 +73,18 @@
                 "scopeName": "source.css.postcss.sugarss",
                 "path": "./syntaxes/sugarss.tmLanguage"
             }
-        ]
-    },
-    "configuration": {
-        "order": 20,
-        "allOf": [
-            {
-                "id": "postcss",
-                "title": "PostCSS",
-                "allOf": [
-                    {
-                        "title": "Controls PostCSS validation and problem severities.",
-                        "properties": {
-                            "css.colorDecorators.enable": {
-                                "type": "boolean",
-                                "default": true,
-                                "description": "%postcss.colorDecorators.enable.desc%"
-                            }
-                        }
-                    }
-                ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "PostCSS Configuration",
+            "properties": {
+                "postcss.validate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Validation for PostCSS files"
+                }
             }
-        ]
+        }
     },
     "devDependencies": {
         "@types/node": "7.0.18",

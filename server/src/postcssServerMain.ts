@@ -66,11 +66,7 @@ let languageServices: { [id: string]: LanguageService } = {
 };
 
 function getLanguageService(document: TextDocument) {
-  let service = languageServices[document.languageId];
-  if (!service) {
-    connection.console.log('Document type is ' + document.languageId + ', using css instead.');
-    service = languageServices['css'];
-  }
+  let service = languageServices['css'];
   return service;
 }
 
@@ -80,6 +76,7 @@ connection.onDidChangeConfiguration(change => {
 });
 
 function updateConfiguration(settings: Settings) {
+  settings['css'] = settings['postcss'];
   for (let languageId in languageServices) {
     languageServices[languageId].configure(settings[languageId]);
   }
