@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>fileTypes</key>
+  <array>
+    <string>js</string>
+    <string>jsx</string>
+    <string>ts</string>
+    <string>tsx</string>
+  </array>
+  <key>injectionSelector</key>
+  <string>L:source -comment</string>
+  <key>patterns</key>
+  <array>
+    <dict>
+      <key>begin</key>
+      <string>\s*+((?&lt;=&lt;style jsx&gt;{)|(?&lt;=&lt;style jsx global&gt;{))\s*(`)</string>
+      <key>beginCaptures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>entity.name.tag.js</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.quasi.begin.js</string>
+        </dict>
+      </dict>
+      <key>contentName</key>
+      <string>source.jsx.styled</string>
+      <key>end</key>
+      <string>\s*(?&lt;=[^\\]\\\\|[^\\]|^\\\\|^)((`))</string>
+      <key>endCaptures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>punctuation.definition.quasi.end.js</string>
+        </dict>
+      </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>include</key>
+          <string>source.css.postcss</string>
+        </dict>
+      </array>
+    </dict>
+  </array>
+  <key>scopeName</key>
+  <string>styled.jsx</string>
+</dict>
+</plist>

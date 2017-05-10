@@ -411,6 +411,6 @@
     </dict>
   </array>
   <key>scopeName</key>
-  <string>source.css.postcss.sugarss</string>
+  <string>source.css.sugarss</string>
 </dict>
 </plist>

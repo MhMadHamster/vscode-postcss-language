@@ -2,7 +2,7 @@
     "name": "postcss-language",
     "displayName": "postcss-sugarss-language",
     "description": "postcss and sugarss syntax support extension for VSCode",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "publisher": "mhmadhamster",
     "icon": "img/icon.png",
     "repository": {
@@ -48,7 +48,7 @@
                     ".pcss",
                     ".postcss"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./configurations/language-configuration.json"
             },
             {
                 "id": "sugarss",
@@ -59,7 +59,14 @@
                 "extensions": [
                     ".sss"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./configurations/language-configuration.json"
+            },
+            {
+                "id": "source.jsx.styled",
+                "aliases": [
+                    "PostCSS (jsx styled)"
+                ],
+                "configuration": "./configurations/styled-jsx-configuration.json"
             }
         ],
         "grammars": [
@@ -70,8 +77,19 @@
             },
             {
                 "language": "sugarss",
-                "scopeName": "source.css.postcss.sugarss",
+                "scopeName": "source.css.sugarss",
                 "path": "./syntaxes/sugarss.tmLanguage"
+            },
+            {
+                "injectTo": [
+                    "source.jsx",
+                    "source.tsx",
+                    "source.js",
+                    "source.ts",
+                    "source.es6"
+                ],
+                "scopeName": "styled.jsx",
+                "path": "./syntaxes/styled.jsx.tmLanguage"
             }
         ],
         "configuration": {
