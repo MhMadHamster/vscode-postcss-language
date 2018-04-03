@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "outDir": "./out",
     "lib": [
-      "es5"
+      "es5",
+      "es6"
     ]
   },
   "include": [
