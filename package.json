@@ -2,7 +2,7 @@
     "name": "postcss-language",
     "displayName": "postcss-sugarss-language",
     "description": "postcss and sugarss syntax support extension for VSCode",
-    "version": "2.0.3",
+    "version": "2.1.0",
     "publisher": "mhmadhamster",
     "icon": "img/icon.png",
     "repository": {
@@ -27,7 +27,7 @@
         "vscode"
     ],
     "engines": {
-        "vscode": "^1.10.0"
+        "vscode": "^1.18.x"
     },
     "categories": [
         "Languages"
@@ -105,12 +105,14 @@
         }
     },
     "devDependencies": {
-        "@types/node": "7.0.18",
-        "typescript": "2.3.2",
-        "vscode": "1.1.0"
+        "@types/node": "^9.6.1",
+        "typescript": "^2.8.1",
+        "vscode": "^1.1.14"
     },
     "dependencies": {
-        "vscode-languageclient": "3.2.1",
-        "vscode-nls": "2.0.2"
+        "vscode-css-languageservice": "^3.0.8",
+        "vscode-languageclient": "^4.0.1",
+        "vscode-languageserver": "^4.0.0",
+        "vscode-nls": "^3.2.2"
     }
 }
