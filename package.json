@@ -30,7 +30,7 @@
         "vscode": "^1.18.x"
     },
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
     "activationEvents": [
         "onLanguage:postcss"
